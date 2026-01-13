@@ -16,60 +16,110 @@ body {
 .container {
     background: rgba(255, 255, 255, 0.9);
     width: 100%;
-    max-width: 450px;
+    max-width: 550px;
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.75);
-}
-
-.nhap::placeholder {
-    font-style: italic;
-    color: #888;    
+    scrollbar-width: auto;
 }
 
 header {
     font-size: 200%;
 }
 
+.input {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.enter, .date_time {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.enter { flex: 2.5; }
+.date_time { flex: 1; font-size: 0.8rem; }
+
+#time {
+    flex: 2;
+    width: 300%;
+}
+.enter::placeholder, #time::placeholder {
+    font-style: italic;
+    color: #888;    
+}
+
 .but {
-    background-color: #535a50;
+    background-color: var(--primary-color);
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .but:hover {
-    background-color: #467eee;
+    background-color: #3a3b5c;
     transform: scale(1.1);
 }
 
-
 .filters {
-    padding: 1rem;
     display: flex;
+    justify-content: center;
+    padding: 1rem;
     gap: 20px;
     
 }
 
 .filter-btn {
     background-color: white;
-    transition: all 0.3s ease;
     border-radius: 20px;
-}
-
-.filter-btn:hover {
-    margin-left: 0;
-    background-color: #49ea14;
-    transform: scale(1.1);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.input {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+.filter-btn.active, .filter-btn:hover {
+    margin-left: 0;
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
 }
 
 .task-item {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.task-info {
+    display: flex;
+    align-items: center;
     gap: 10px;
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }

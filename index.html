@@ -11,24 +11,22 @@
     <div class="container">
         <header>My Daily Task</header>
         <div class="input">
-            <input class="nhap" type="text" placeholder="Công việc cần làm">
-            <input class="date_time" type="datetime-local">
-            <button class="but">Add</button>
+            <input id="enter" class="enter" type="text" required placeholder="Công việc cần làm">
+            <input id="dt_start" class="date_time" required type="datetime-local">
+            <input id="time" class="date_time" required placeholder="Thời lượng (m)" type="number">
+            <button id="add-btn" class="but" type="submit">Add</button>
         </div>
+
         <div class="filters">
-            <button class="filter-btn" data-filter="all">Tất cả</button>
+            <button class="filter-btn active" data-filter="all">Tất cả</button>
             <button class="filter-btn" data-filter="completed">Đã xong</button>
             <button class="filter-btn" data-filter="pending">Chưa xong</button>
         </div>
+
         <ul id="task-list" class="task-list">
-            <li class="task-item">
-                <div class="task-info">
-                    <input type="checkbox">
-                </div>
-                <button class="delete-btn">&times;</button>
-            </li>
         </ul>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
